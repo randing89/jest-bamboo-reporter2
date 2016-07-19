@@ -1,39 +1,35 @@
 # eslint-bamboo-formatter
 [![view on npm](http://img.shields.io/npm/v/eslint-bamboo-formatter.svg?style=flat)](https://www.npmjs.org/package/eslint-bamboo-formatter)
-[![npm module downloads per month](http://img.shields.io/npm/dm/eslint-bamboo-formatter.svg?style=flat)](https://www.npmjs.org/package/eslint-bamboo-formatter)
-[![Dependency status](https://david-dm.org/voidberg/eslint-bamboo-formatter.svg?style=flat)](https://david-dm.org/voidberg/eslint-bamboo-formatter)
 
-> A reporter for eslint which produces a report compatible with Atlassian Bamboo Mocha Test Parser.
+> A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser. Forked from [eslint-bamboo-formatter
+](https://github.com/voidberg/eslint-bamboo-formatter)
 
 ## Installation
 
 ```sh
-npm install eslint-bamboo-formatter
+npm install jest-bamboo-formatter
 ```
 
 ## Usage
 
-### With [ESLint CLI](http://eslint.org/docs/user-guide/command-line-interface):
+In the jest config file add the path to the module. For example.
 
-```sh
-eslint file.js -f node_modules/eslint-bamboo-formatter/reporter.js
+```json
+{
+    "testResultsProcessor": "node_modules/jest-bamboo-formatter"
+}
 ```
 
-### With [Gulp ESLint](https://github.com/adametry/gulp-eslint):
+then run jest (or a `npm run` command) with the path to the config file
 
-```js
-var eslint   = require('gulp-eslint');
-var reporter = require('eslint-bamboo-formatter');
-
-gulp.src(['js/**/*.js'])
-  .pipe(eslint())
-  .pipe(eslint.format(reporter));
+```sh
+    jest --config=./config/jest.config.json
 ```
 
 ### Output
 
-By default, the reporter writes to `eslint.json`. The file name can be changed by setting the `ESLINT_FILE` environment variable.
+By default, the reporter writes to `jest.json`. The file name can be changed by setting the `JEST_FILE` environment variable.
 
 ## License
 
-[MIT](https://github.com/voidberg/eslint-bamboo-formatter/blob/master/LICENSE)
+[MIT](https://github.com/adalbertoteixeira/jest-bamboo-formatter/blob/master/LICENSE)
