@@ -22,4 +22,8 @@
     "type": "git",
     "url": "https://github.com/adalbertoteixeira/jest-bamboo-formatter"
   },
+  "dependencies": {
+    "fs": "0.0.2",
+    "path": "^0.12.7"
+  }
 }
