@@ -1,6 +1,6 @@
 {
   "name": "jest-bamboo-formatter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser.",
   "keywords": [
     "jest",
