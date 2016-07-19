@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var util = require('./util');
 
-var filename = process.env.ESLINT_FILE || 'jest.json';
+var filename = process.env.JEST_FILE || 'jest.json';
 
 var output = {
   stats: {},
@@ -15,7 +15,7 @@ module.exports = function reporter(results) {
   output.stats.tests = results.numTotalTests;
   output.stats.passes = results.numPassedTests;
   output.stats.failures = results.numFailedTests;
-  output.stats.duration = 0;
+  output.stats.duration = Date.now() - results.startTime;
   output.stats.start = new Date(results.startTime);
   output.stats.end = new Date();
 
