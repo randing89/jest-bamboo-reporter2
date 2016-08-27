@@ -21,6 +21,7 @@ module.exports = function reporter(results) {
 
   results.testResults.forEach(function suiteIterator(suiteResult) {
     suiteResult.testResults.forEach(function testIterator(testResult) {
+      /* istanbul ignore else */
       if (testResult.status === 'passed') {
         output.passes.push({
           title: testResult.title,

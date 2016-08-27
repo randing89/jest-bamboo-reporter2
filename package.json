@@ -1,6 +1,10 @@
 {
   "name": "jest-bamboo-formatter",
   "version": "0.0.3",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc tape tests/index.test.js"
+  },
   "description": "A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser.",
   "keywords": [
     "jest",
@@ -17,7 +21,6 @@
     "name": "Adalberto Teixeira",
     "url": "https://github.com/adalbertoteixeir"
   },
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/adalbertoteixeira/jest-bamboo-formatter"
@@ -25,5 +28,9 @@
   "dependencies": {
     "fs": "0.0.2",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "moment": "^2.14.1",
+    "tape": "^4.6.0"
   }
 }
