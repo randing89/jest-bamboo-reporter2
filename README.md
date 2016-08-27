@@ -1,5 +1,5 @@
 # jest bamboo formatter
-[![view on npm](http://img.shields.io/npm/v/jest-bamboo-formatter.svg?style=flat)](https://www.npmjs.com/package/jest-bamboo-formatter)
+[![view on npm](http://img.shields.io/npm/v/jest-bamboo-formatter.svg?style=flat)](https://www.npmjs.com/package/jest-bamboo-formatter) [![Build Status](https://semaphoreci.com/api/v1/adalbertoteixeira/jest-bamboo-formatter/branches/master/badge.svg)](https://semaphoreci.com/adalbertoteixeira/jest-bamboo-formatter)
 
 > A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser. Forked from [eslint-bamboo-formatter
 ](https://github.com/voidberg/eslint-bamboo-formatter)
