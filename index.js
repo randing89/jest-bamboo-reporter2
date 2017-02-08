@@ -49,4 +49,5 @@ module.exports = function reporter(results) {
   });
 
   fs.writeFileSync(filename, JSON.stringify(output, null, 2), 'utf-8');
+  return results;
 };
