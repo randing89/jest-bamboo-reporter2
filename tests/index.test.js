@@ -11,7 +11,10 @@ test('Test function exists', function(t) {
 test('Test ouput produces the expected result', function(t) {
   var jestTestsResult = JSON.parse(fs.readFileSync(__dirname + '/jest-tests-result.json', 'utf8'));
   var jestTestsExpectedResults = JSON.parse(fs.readFileSync(__dirname + '/expected-results.json', 'utf8'));
-  jestBambooFormatter(jestTestsResult);
+  var formatterResult = jestBambooFormatter(jestTestsResult);
+
+  t.equal(jestTestsResult, formatterResult);
+
   var jestReporterResult = JSON.parse(fs.readFileSync('./jest.json', 'utf8'));
   t.equal(jestReporterResult.stats.tests, jestTestsExpectedResults.stats.tests, 'Expect total count of test to have the correct number');
   t.equal(jestReporterResult.stats.passes, jestTestsExpectedResults.stats.passes, 'Expect total count of passed tests to have the correct number');
