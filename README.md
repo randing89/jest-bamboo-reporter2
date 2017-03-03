@@ -16,7 +16,7 @@ In the jest config file add the path to the module. For example.
 
 ```json
 {
-    "testResultsProcessor": "node_modules/jest-bamboo-formatter"
+    "testResultsProcessor": "./node_modules/jest-bamboo-formatter"
 }
 ```
 
