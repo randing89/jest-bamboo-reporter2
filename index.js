@@ -10,7 +10,7 @@ var output = {
   skipped: []
 };
 
-module.exports = function reporter(results) {
+module.exports = function (results) {
   output.stats.tests = results.numTotalTests;
   output.stats.passes = results.numPassedTests;
   output.stats.failures = results.numFailedTests;
@@ -23,7 +23,7 @@ module.exports = function reporter(results) {
   results.testResults.forEach(function (suiteResult) {
     suiteResult.testResults.forEach(function (testResult) {
       var suiteName = replaceCharsNotSupportedByBamboo(testResult.ancestorTitles[0] || suiteResult.testFilePath);
-      var testTitle = replaceCharsNotSupportedByBamboo([...testResult.ancestorTitles, testResult.title].join(' – '));
+      var testTitle = replaceCharsNotSupportedByBamboo(testResult.ancestorTitles.concat([testResult.title]).join(' – '));
 
       if (testTitle in existingTestTitles) {
         var newTestTitle;
