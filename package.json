@@ -1,34 +1,31 @@
 {
-  "name": "jest-bamboo-formatter",
-  "version": "1.0.1",
+  "name": "jest-bamboo-reporter",
+  "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "nyc tape tests/index.test.js"
+    "test": "nyc tape index.test.js"
   },
   "description": "A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser.",
   "keywords": [
     "jest",
-    "formatter",
+    "reporter",
     "atlassian",
     "bamboo"
   ],
-  "homepage": "https://github.com/adalbertoteixeira/jest-bamboo-formatter",
+  "homepage": "https://github.com/CHECK24/jest-bamboo-reporter",
   "bugs": {
-    "url": "https://github.com/adalbertoteixeira/jest-bamboo-formatter/issues"
+    "url": "https://github.com/CHECK24/jest-bamboo-reporter/issues"
   },
   "license": "MIT",
-  "author": {
-    "name": "Adalberto Teixeira",
-    "url": "https://github.com/adalbertoteixeir"
-  },
+  "author": "unfall24 <un-sach-dev@check24.de>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adalbertoteixeira/jest-bamboo-formatter"
+    "url": "https://github.com/CHECK24/jest-bamboo-reporter"
   },
   "dependencies": {},
   "devDependencies": {
-    "moment": "^2.14.1",
-    "nyc": "^8.1.0",
-    "tape": "^4.6.0"
+    "moment": "~2.14.1",
+    "nyc": "~8.1.0",
+    "tape": "~4.6.0"
   }
 }
