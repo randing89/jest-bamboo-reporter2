@@ -35,9 +35,30 @@ then run jest (or a `npm run` command) with the path to the config file
 jest --config=./config/jest.config.json
 ~~~
 
+## Configuration
+
+The name of test suite and separator can be customized by setting the environment variables
+
+~~~sh
+JEST_BAMBOO_SUITE_NAME="{fileNameWithoutExtension}" JEST_BAMBOO_NAME_SEPARATOR=" >> " jest
+~~~
+
+`JEST_BAMBOO_SUITE_NAME` supports following variables
+- firstAncestorTitle: The name of the outermost "describe" group
+- filePath: Full path of the test
+- fileName: File name of the test
+- fileNameWithoutExtension: File name of the test without extension
+
+Also, variable supports fallback. For example: 
+`{firstAncestorTitle|filename}` means use file name of the test if it doesn't have a group name.
+
 ## Output
 
 By default, the reporter writes to `test-report.json`. The file name can be changed by setting the `JEST_REPORT_FILE` environment variable.
+
+~~~sh
+JEST_REPORT_FILE="./jest-report.json" jest
+~~~
 
 ## License
 
