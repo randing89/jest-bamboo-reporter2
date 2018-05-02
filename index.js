@@ -1,16 +1,19 @@
 var fs = require('fs');
-var EOL = require('os').EOL;
-
-var filename = process.env.JEST_REPORT_FILE || 'test-report.json';
-
-var output = {
-  stats: {},
-  failures: [],
-  passes: [],
-  skipped: []
-};
+var path = require('path');
+var helpers = require('./helpers');
 
 module.exports = function (results) {
+  var output = {
+    stats: {},
+    failures: [],
+    passes: [],
+    skipped: []
+  };
+
+  var filename = process.env.JEST_REPORT_FILE || 'test-report.json';
+  var suiteNameTemplate = process.env.JEST_BAMBOO_SUITE_NAME || '{firstAncestorTitle|filePath}';
+  var nameSeparator = process.env.JEST_BAMBOO_NAME_SEPARATOR || ' – ';
+
   output.stats.tests = results.numTotalTests;
   output.stats.passes = results.numPassedTests;
   output.stats.failures = results.numFailedTests;
@@ -22,8 +25,16 @@ module.exports = function (results) {
 
   results.testResults.forEach(function (suiteResult) {
     suiteResult.testResults.forEach(function (testResult) {
-      var suiteName = replaceCharsNotSupportedByBamboo(testResult.ancestorTitles[0] || suiteResult.testFilePath);
-      var testTitle = replaceCharsNotSupportedByBamboo(testResult.ancestorTitles.concat([testResult.title]).join(' – '));
+      var testFileName = path.basename(suiteResult.testFilePath);
+      var variables = {
+        'firstAncestorTitle': testResult.ancestorTitles[0],
+        'filePath': suiteResult.testFilePath,
+        'fileName': testFileName,
+        'fileNameWithoutExtension': path.parse(testFileName).name
+      }
+
+      var suiteName = helpers.replaceCharsNotSupportedByBamboo(helpers.replaceVariables(suiteNameTemplate, variables));
+      var testTitle = helpers.replaceCharsNotSupportedByBamboo(testResult.ancestorTitles.concat([testResult.title]).join(nameSeparator));
 
       if (testTitle in existingTestTitles) {
         var newTestTitle;
@@ -42,7 +53,7 @@ module.exports = function (results) {
         fullTitle: suiteName,
         duration: suiteResult.perfStats.end - suiteResult.perfStats.start,
         errorCount: testResult.failureMessages.length,
-        error: testResult.failureMessages.length ? formatErrorMessages(testResult.failureMessages) : undefined
+        error: testResult.failureMessages.length ? helpers.formatErrorMessages(testResult.failureMessages) : undefined
       };
 
       switch (testResult.status) {
@@ -64,23 +75,3 @@ module.exports = function (results) {
   fs.writeFileSync(filename, JSON.stringify(output, null, 2), 'utf8');
   return results;
 };
-
-function replaceCharsNotSupportedByBamboo(s) {
-  return s.replace(/\./g, '_');
-}
-
-function formatErrorMessages(errorMessages) {
-  var lines = [];
-
-  if (errorMessages.length === 1) {
-    lines.push('1 failure:');
-  } else {
-    lines.push(errorMessages.length + ' failures:');
-  }
-
-  errorMessages.forEach(function (message) {
-    lines.push('* ' + message);
-  });
-
-  return lines.join(EOL);
-}
