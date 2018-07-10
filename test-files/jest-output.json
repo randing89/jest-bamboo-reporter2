@@ -11,6 +11,34 @@
   "numPendingTests": 2,
   "testResults": [
     {
+      "console": null,
+      "displayName": "",
+      "failureMessage": "  \u001b[1m● \u001b[22mTest suite failed to run\n\n    Cannot find module '../../../../test/enzyme-utils-local' from 'SpaceOverview-test.js'\n\n    \u001b[0m \u001b[90m 12 | \u001b[39mjest\u001b[33m.\u001b[39mmock(\u001b[32m\"../../InlineComments\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 13 | \u001b[39mjest\u001b[33m.\u001b[39mmock(\u001b[32m\"../../EditorLoader\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 | \u001b[39mjest\u001b[33m.\u001b[39mmock(\u001b[32m\"../../EditorFlags\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m    | \u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 15 | \u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 16 | \u001b[39mit(\u001b[32m\"should show blank experience if space doesn't have space overview page\"\u001b[39m\u001b[33m,\u001b[39m async () \u001b[33m=>\u001b[39m {\u001b[0m\n    \u001b[0m \u001b[90m 17 | \u001b[39m  \u001b[36mconst\u001b[39m wrapper \u001b[33m=\u001b[39m await mockAndMount(\u001b[33m<\u001b[39m\u001b[33mSpaceOverview\u001b[39m spaceKey\u001b[33m=\u001b[39m\u001b[32m\"DS\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m\n\n      \u001b[2mat Resolver.resolveModule (\u001b[22m\u001b[0m\u001b[36m../../node_modules/jest-runner/node_modules/jest-resolve/build/index.js\u001b[39m\u001b[0m\u001b[2m:210:17)\u001b[22m\n      \u001b[2mat Object.<anonymous> (\u001b[22m\u001b[0m\u001b[36msrc/components/SpaceOverview/__tests__/SpaceOverview-test.js\u001b[39m\u001b[0m\u001b[2m:14:376)\u001b[22m\n",
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 0,
+      "numPendingTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 0,
+        "start": 0
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "sourceMaps": {},
+      "testExecError": "Cannot find module '../../../../test/enzyme-utils-local' from 'SpaceOverview-test.js'",
+      "testFilePath": "src/components/SpaceOverview/__tests__/SpaceOverview-test.js",
+      "testResults": []
+    },
+    {
       "numFailingTests": 2,
       "numPassingTests": 1,
       "numPendingTests": 1,

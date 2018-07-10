@@ -24,18 +24,42 @@ module.exports = function (results) {
   var existingTestTitles = Object.create(null);
 
   results.testResults.forEach(function (suiteResult) {
+    var testFileName = path.basename(suiteResult.testFilePath);
+
+    if (suiteResult.failureMessage) {
+      var suiteName = helpers.replaceCharsNotSupportedByBamboo(
+        helpers.replaceVariables(suiteNameTemplate, {
+          firstAncestorTitle: suiteResult.displayName,
+          filePath: suiteResult.testFilePath,
+          fileName: testFileName,
+          fileNameWithoutExtension: path.parse(testFileName).name
+        })
+      );
+      output.failures.push({
+        title: suiteName,
+        fullTitle: suiteName,
+        duration: suiteResult.perfStats.end - suiteResult.perfStats.start,
+        errorCount: 1,
+        error: suiteResult.failureMessage
+      });
+
+      // Nothing to process if the suite failed
+      return;
+    }
+
     suiteResult.testResults.forEach(function (testResult) {
-      var testFileName = path.basename(suiteResult.testFilePath);
-      var variables = {
-        'firstAncestorTitle': testResult.ancestorTitles[0],
-        'filePath': suiteResult.testFilePath,
-        'fileName': testFileName,
-        'fileNameWithoutExtension': path.parse(testFileName).name
-      }
-
-      var suiteName = helpers.replaceCharsNotSupportedByBamboo(helpers.replaceVariables(suiteNameTemplate, variables));
-      var testTitle = helpers.replaceCharsNotSupportedByBamboo(testResult.ancestorTitles.concat([testResult.title]).join(nameSeparator));
-
+      var suiteName = helpers.replaceCharsNotSupportedByBamboo(
+        helpers.replaceVariables(suiteNameTemplate, {
+          firstAncestorTitle: testResult.ancestorTitles[0],
+          filePath: suiteResult.testFilePath,
+          fileName: testFileName,
+          fileNameWithoutExtension: path.parse(testFileName).name
+        })
+      );
+      var testTitle = helpers.replaceCharsNotSupportedByBamboo(
+        testResult.ancestorTitles.concat([testResult.title]).join(nameSeparator)
+      );
+      
       if (testTitle in existingTestTitles) {
         var newTestTitle;
         var counter = 1;
