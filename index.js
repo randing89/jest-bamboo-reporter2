@@ -26,7 +26,7 @@ module.exports = function (results) {
   results.testResults.forEach(function (suiteResult) {
     var testFileName = path.basename(suiteResult.testFilePath);
 
-    if (suiteResult.failureMessage) {
+    if (suiteResult.failureMessage && suiteResult.testResults.length === 0) {
       var suiteName = helpers.replaceCharsNotSupportedByBamboo(
         helpers.replaceVariables(suiteNameTemplate, {
           firstAncestorTitle: suiteResult.displayName,
@@ -42,9 +42,6 @@ module.exports = function (results) {
         errorCount: 1,
         error: suiteResult.failureMessage
       });
-
-      // Nothing to process if the suite failed
-      return;
     }
 
     suiteResult.testResults.forEach(function (testResult) {
@@ -59,7 +56,7 @@ module.exports = function (results) {
       var testTitle = helpers.replaceCharsNotSupportedByBamboo(
         testResult.ancestorTitles.concat([testResult.title]).join(nameSeparator)
       );
-      
+
       if (testTitle in existingTestTitles) {
         var newTestTitle;
         var counter = 1;

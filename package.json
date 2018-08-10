@@ -22,6 +22,10 @@
     "type": "git",
     "url": "https://github.com/CHECK24/jest-bamboo-reporter"
   },
+  "jest": {
+    "testURL": "http://localhost/",
+    "testEnvironment": "node"
+  },
   "dependencies": {},
   "devDependencies": {
     "jest": "~22.4.3",
