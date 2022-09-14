@@ -17,6 +17,7 @@ module.exports = function (results) {
   output.stats.tests = results.numTotalTests;
   output.stats.passes = results.numPassedTests;
   output.stats.failures = results.numFailedTests;
+  output.stats.pendings = results.numPendingTests;
   output.stats.duration = Date.now() - results.startTime;
   output.stats.start = new Date(results.startTime);
   output.stats.end = new Date();
