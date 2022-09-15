@@ -2,9 +2,7 @@
 
 A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser. This is a fork and republish of the  `jest-bamboo-reporter` package since the original package is no longer being maintained. 
 
-[![Build Status](https://travis-ci.org/randing89/jest-bamboo-reporter2.svg?branch=master)](https://travis-ci.org/randing89/jest-bamboo-reporter2)
 [![npm](https://img.shields.io/npm/v/jest-bamboo-reporter2.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter2)
-[![npm](https://img.shields.io/david/randing89/jest-bamboo-reporter2.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter2)
 [![npm downloads](https://img.shields.io/npm/dt/jest-bamboo-reporter2.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter2)
 
 Forked from [jest-bamboo-formatter](https://github.com/adalbertoteixeira/jest-bamboo-formatter), with major changes in order to work around Bamboo's naming restrictions:
