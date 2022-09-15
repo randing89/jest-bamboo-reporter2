@@ -1,5 +1,5 @@
 {
-  "name": "jest-bamboo-reporter",
+  "name": "jest-bamboo-reporter2",
   "version": "1.2.1",
   "main": "index.js",
   "scripts": {
@@ -12,15 +12,15 @@
     "atlassian",
     "bamboo"
   ],
-  "homepage": "https://github.com/CHECK24/jest-bamboo-reporter",
+  "homepage": "https://github.com/randing89/jest-bamboo-reporter2",
   "bugs": {
-    "url": "https://github.com/CHECK24/jest-bamboo-reporter/issues"
+    "url": "https://github.com/randing89/jest-bamboo-reporter2/issues"
   },
   "license": "MIT",
   "author": "unfall24 <un-sach-dev@check24.de>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CHECK24/jest-bamboo-reporter"
+    "url": "https://github.com/randing89/jest-bamboo-reporter2"
   },
   "dependencies": {},
   "devDependencies": {

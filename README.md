@@ -1,11 +1,11 @@
-# jest-bamboo-reporter
+# jest-bamboo-reporter2
 
-A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser.
+A reporter for jest which produces a report compatible with Atlassian Bamboo Mocha Test Parser. This is a fork and republish of the  `jest-bamboo-reporter` package since the original package is no longer being maintained. 
 
-[![Build Status](https://travis-ci.org/CHECK24/jest-bamboo-reporter.svg?branch=master)](https://travis-ci.org/CHECK24/jest-bamboo-reporter)
-[![npm](https://img.shields.io/npm/v/jest-bamboo-reporter.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter)
-[![npm](https://img.shields.io/david/CHECK24/jest-bamboo-reporter.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter)
-[![npm downloads](https://img.shields.io/npm/dt/jest-bamboo-reporter.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter)
+[![Build Status](https://travis-ci.org/randing89/jest-bamboo-reporter2.svg?branch=master)](https://travis-ci.org/randing89/jest-bamboo-reporter2)
+[![npm](https://img.shields.io/npm/v/jest-bamboo-reporter2.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter2)
+[![npm](https://img.shields.io/david/randing89/jest-bamboo-reporter2.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter2)
+[![npm downloads](https://img.shields.io/npm/dt/jest-bamboo-reporter2.svg?style=flat-square)](https://www.npmjs.com/package/jest-bamboo-reporter2)
 
 Forked from [jest-bamboo-formatter](https://github.com/adalbertoteixeira/jest-bamboo-formatter), with major changes in order to work around Bamboo's naming restrictions:
 
@@ -16,7 +16,7 @@ Forked from [jest-bamboo-formatter](https://github.com/adalbertoteixeira/jest-ba
 ## Installation
 
 ~~~sh
-npm install --save-dev jest-bamboo-reporter
+npm install --save-dev jest-bamboo-reporter2
 ~~~
 
 ## Usage
@@ -25,7 +25,7 @@ In the jest config file add the path to the module. For example:
 
 ~~~json
 {
-    "testResultsProcessor": "jest-bamboo-reporter"
+    "testResultsProcessor": "jest-bamboo-reporter2"
 }
 ~~~
 
@@ -62,4 +62,4 @@ JEST_REPORT_FILE="./jest-report.json" jest
 
 ## License
 
-[MIT](https://github.com/CHECK24/jest-bamboo-reporter/blob/master/LICENSE)
+[MIT](https://github.com/randing89/jest-bamboo-reporter2/blob/master/LICENSE)

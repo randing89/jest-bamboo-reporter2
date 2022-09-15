@@ -2,7 +2,7 @@ var fs = require('fs');
 var sinon = require('sinon');
 var jestBambooReporter = require('./index');
 
-describe('jest-bamboo-reporter', function () {
+describe('jest-bamboo-reporter2', function () {
   var jestOutput = JSON.parse(fs.readFileSync(__dirname + '/test-files/jest-output.json', 'utf8'));
   var clock;
 
